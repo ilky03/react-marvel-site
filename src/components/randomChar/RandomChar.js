@@ -1,63 +1,52 @@
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 import Spinner from '../spinner/Spinner';
-import MarvelServices from '../../services/MarvelServices';
+import useMarvelServices from '../../services/MarvelServices';
 
 import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
 
-class RandomChar extends Component {
-    componentDidMount() {
-        this.updateChar();
-    }
-    state = {
-        char: {},
-        loading: true
-    }
- 
-    marvelServices = new MarvelServices();
+const RandomChar = () => {
 
-    onCharLoaded = (newChar) => {
-        this.setState({
-            char: newChar,
-            loading: false
-        });
+    const [char, setChar] = useState({});
+
+    const {loading, getCharacter} = useMarvelServices();
+
+    useEffect(() => {
+       updateChar();
+    }, []);
+
+    const onCharLoaded = (newChar) => {
+        setChar(newChar);
     }
 
-    updateChar = () => {
+    const updateChar = () => {
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
-        this.setState({loading: true})
-        this.marvelServices
-            .getCharacter(id)
-            .then(this.onCharLoaded)
+        getCharacter(id).then(onCharLoaded)
     }
 
-    render() {
-        const {char, loading} = this.state;
-
-        return (
-            <div className="randomchar">
-                {loading ? <Spinner /> : <ViewBlock char={char} />}
-                <div className="randomchar__static">
-                    <p className="randomchar__title">
-                        Random character for today!<br/>
-                        Do you want to get to know him better?
-                    </p>
-                    <p className="randomchar__title">
-                        Or choose another one
-                    </p>
-                    <button className="button button__main" onClick={this.updateChar}>
-                        <div className="inner">try it</div>
-                    </button>
-                    <img src={mjolnir} alt="mjolnir" className="randomchar__decoration"/>
-                </div>
+    return (
+        <div className="randomchar">
+            {loading ? <Spinner /> : <ViewBlock char={char} />}
+            <div className="randomchar__static">
+                <p className="randomchar__title">
+                    Random character for today!<br/>
+                    Do you want to get to know him better?
+                </p>
+                <p className="randomchar__title">
+                    Or choose another one
+                </p>
+                <button className="button button__main" onClick={updateChar}>
+                    <div className="inner">try it</div>
+                </button>
+                <img src={mjolnir} alt="mjolnir" className="randomchar__decoration"/>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 function ViewBlock({char}) {
     const {name, description, thumbnail, homepage, wiki} = char;
-    const imgStyle = thumbnail.includes('image_not_available') ? {objectFit: 'contain'} : null;
+    const imgStyle = thumbnail ? thumbnail.includes('image_not_available') ? {objectFit: 'contain'} : null : null;
     return (
         <div className="randomchar__block">
             <img src={thumbnail} alt="Random character" style={imgStyle} className="randomchar__img"/>

@@ -3,22 +3,20 @@ import PropTypes from 'prop-types';
 
 import './charList.scss';
 import Spinner from '../spinner/Spinner';
-import MarvelServices from '../../services/MarvelServices';
+import useMarvelServices from '../../services/MarvelServices';
 
 const CharList = ({onSelectedChar, selectedId}) => {
     
     const [charList, setCharList] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [offset, setOffset] = useState(210); 
-    const marvelServices = new MarvelServices();
+    const {loading, getAllCharacters} = useMarvelServices();
 
     useEffect(() => {
         onLoading();
     }, []);
 
     const onLoading = () => {
-        setLoading(true);
-        marvelServices.getAllCharacters(offset).then(res => {setCharList([...charList, ...res]); setLoading(false)});
+        getAllCharacters(offset).then(res => {setCharList([...charList, ...res])});
         setOffset(offset + 9);
     }
 

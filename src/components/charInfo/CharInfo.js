@@ -1,28 +1,25 @@
 import { useState, useEffect } from 'react';
 
-import MarvelServices from '../../services/MarvelServices';
+import useMarvelServices from '../../services/MarvelServices';
 import Spinner from '../spinner/Spinner';
 import Skeleton from '../skeleton/Skeleton';
 import './charInfo.scss';
 
 const CharInfo = ({charId}) => {
 
-    const marvelServices = new MarvelServices();
-
     const [char, setChar] = useState(null);
-    const [loading, setLoading] = useState(false);
 
+    const {loading, getCharacter} = useMarvelServices();
+    
     const updateChar = () => {
         if (!charId) {
             return;
         }
-        setLoading(true);
-        marvelServices.getCharacter(charId).then(loadingChar);
+        getCharacter(charId).then(loadingChar);
     }
 
     const loadingChar = (char) => {
         setChar(char);
-        setLoading(false);
     }
 
     useEffect(() => {
@@ -44,7 +41,7 @@ const CharInfo = ({charId}) => {
 
 const View = ({char}) => {
     const {name, thumbnail, description, homepage, wiki, comics} = char;
-    const comicList = comics.length === 0 ? 'Not found comics with' : comics.map((item, i) => {
+    const comicList = comics.length === 0 ? 'Not found comics with this character :(' : comics.map((item, i) => {
         if (i > 10) {
             return null;
         }
