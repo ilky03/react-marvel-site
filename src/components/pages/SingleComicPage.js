@@ -38,7 +38,7 @@ const SingleComicPage = () => {
         <div className='single-comic'>
             {spinner}
             {view}
-            <Link to="/comics" className="single-comic__back">Back to all</Link>
+            <Link to="/react-marvel-site/comics" className="single-comic__back">Back to all</Link>
         </div>
     )
 }
