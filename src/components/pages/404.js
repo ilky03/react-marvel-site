@@ -10,7 +10,7 @@ function Page404() {
                 <h3>404 <br/> Page not found</h3>
             </div>
             <button className="button button__main button__long">
-                <div className="inner"><Link to="/">Back to main page</Link></div>
+                <div className="inner"><Link to="/react-marvel-site">Back to main page</Link></div>
             </button>       
         </>
 )

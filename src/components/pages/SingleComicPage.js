@@ -19,7 +19,7 @@ const SingleComicPage = () => {
         getComic(comicId)
             .then(loadingComic)
             .catch(() => {
-                navigate('/404');
+                navigate('/react-marvel-site/404');
             });
     }
 

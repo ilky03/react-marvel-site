@@ -18,9 +18,9 @@ function App() {
             <main>
                 <Suspense fallback={<Spinner />}>
                     <Routes>
-                        <Route path='/' element={<MainPage />} />
-                        <Route path='/comics' element={<ComicsPage />} />
-                        <Route path='/comics/:comicId' element={<SingleComicPage />} />
+                        <Route path='/react-marvel-site' element={<MainPage />} />
+                        <Route path='/react-marvel-site/comics' element={<ComicsPage />} />
+                        <Route path='/react-marvel-site/comics/:comicId' element={<SingleComicPage />} />
                         <Route path='*' element={<Page404 />} />
                     </Routes>
                 </Suspense>
