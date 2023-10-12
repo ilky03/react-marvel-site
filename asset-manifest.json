@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-marvel-site/static/css/main.e834e83e.css",
-    "main.js": "/react-marvel-site/static/js/main.7e878e55.js",
+    "main.js": "/react-marvel-site/static/js/main.734f150e.js",
     "static/css/728.a99cc225.chunk.css": "/react-marvel-site/static/css/728.a99cc225.chunk.css",
     "static/js/728.0205fc83.chunk.js": "/react-marvel-site/static/js/728.0205fc83.chunk.js",
     "static/css/836.2a5eef3e.chunk.css": "/react-marvel-site/static/css/836.2a5eef3e.chunk.css",
     "static/js/836.01f77b1f.chunk.js": "/react-marvel-site/static/js/836.01f77b1f.chunk.js",
     "static/js/976.2d172986.chunk.js": "/react-marvel-site/static/js/976.2d172986.chunk.js",
     "static/css/800.26c1a3ac.chunk.css": "/react-marvel-site/static/css/800.26c1a3ac.chunk.css",
-    "static/js/800.8a8b564f.chunk.js": "/react-marvel-site/static/js/800.8a8b564f.chunk.js",
+    "static/js/800.8072e0fe.chunk.js": "/react-marvel-site/static/js/800.8072e0fe.chunk.js",
     "static/media/spiderman.png": "/react-marvel-site/static/media/spiderman.600a30e1f8e547dc2131.png",
     "static/media/vision.png": "/react-marvel-site/static/media/vision.067d4ae1936d64a577ce.png",
     "static/media/mjolnir.png": "/react-marvel-site/static/media/mjolnir.61f31e1809f12183a524.png",
@@ -16,17 +16,17 @@
     "static/media/Avengers_logo.png": "/react-marvel-site/static/media/Avengers_logo.9eaf219344d83362e830.png",
     "index.html": "/react-marvel-site/index.html",
     "main.e834e83e.css.map": "/react-marvel-site/static/css/main.e834e83e.css.map",
-    "main.7e878e55.js.map": "/react-marvel-site/static/js/main.7e878e55.js.map",
+    "main.734f150e.js.map": "/react-marvel-site/static/js/main.734f150e.js.map",
     "728.a99cc225.chunk.css.map": "/react-marvel-site/static/css/728.a99cc225.chunk.css.map",
     "728.0205fc83.chunk.js.map": "/react-marvel-site/static/js/728.0205fc83.chunk.js.map",
     "836.2a5eef3e.chunk.css.map": "/react-marvel-site/static/css/836.2a5eef3e.chunk.css.map",
     "836.01f77b1f.chunk.js.map": "/react-marvel-site/static/js/836.01f77b1f.chunk.js.map",
     "976.2d172986.chunk.js.map": "/react-marvel-site/static/js/976.2d172986.chunk.js.map",
     "800.26c1a3ac.chunk.css.map": "/react-marvel-site/static/css/800.26c1a3ac.chunk.css.map",
-    "800.8a8b564f.chunk.js.map": "/react-marvel-site/static/js/800.8a8b564f.chunk.js.map"
+    "800.8072e0fe.chunk.js.map": "/react-marvel-site/static/js/800.8072e0fe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e834e83e.css",
-    "static/js/main.7e878e55.js"
+    "static/js/main.734f150e.js"
   ]
 }
